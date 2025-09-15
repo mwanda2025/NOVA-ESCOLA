@@ -77,3 +77,19 @@ const CardFooter = React.forwardRef<
 CardFooter.displayName = "CardFooter"
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+ 
+// Quick actions row for cards (compact, right-aligned, wraps on small screens)
+export const CardActions = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex flex-wrap gap-2 p-4 pt-0 justify-end",
+      className
+    )}
+    {...props}
+  />
+))
+CardActions.displayName = "CardActions"

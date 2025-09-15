@@ -3,6 +3,7 @@ import { Logo } from '@/components/logo';
 import { DashboardNav } from '@/components/dashboard-nav';
 import { UserNav } from '@/components/user-nav';
 import { VirtualAssistant } from '@/components/virtual-assistant';
+import { OnboardingTour } from '@/components/onboarding/OnboardingTour';
 import { HeaderTitle } from '@/components/header-title';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 
@@ -39,9 +40,10 @@ export default function DashboardLayout({
             </div>
           </div>
         </header>
-        <main className="p-4 sm:p-6 md:p-8">
+        <main className="p-4 sm:p-6 md:p-8" data-onb="aluno-header">
           {children}
         </main>
+        <OnboardingTour role="aluno" />
         <VirtualAssistant />
       </SidebarInset>
     </SidebarProvider>

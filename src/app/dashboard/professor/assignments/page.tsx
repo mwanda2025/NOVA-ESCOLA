@@ -66,11 +66,11 @@ export default function AssignmentsPage() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Curso</TableHead>
+                  <TableHead responsiveClassName="hidden md:table-cell">Curso</TableHead>
                   <TableHead>Título</TableHead>
-                  <TableHead>Data de Entrega</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Nota</TableHead>
+                  <TableHead className="hidden sm:table-cell">Data de Entrega</TableHead>
+                  <TableHead className="hidden lg:table-cell">Status</TableHead>
+                  <TableHead className="hidden xl:table-cell">Nota</TableHead>
                   <TableHead>
                     <span className="sr-only">Ações</span>
                   </TableHead>
@@ -79,13 +79,13 @@ export default function AssignmentsPage() {
               <TableBody>
                 {assignments.map((assignment) => (
                   <TableRow key={assignment.title}>
-                    <TableCell className="font-medium">{assignment.course}</TableCell>
+                    <TableCell responsiveClassName="hidden md:table-cell font-medium">{assignment.course}</TableCell>
                     <TableCell>{assignment.title}</TableCell>
-                    <TableCell>{assignment.dueDate}</TableCell>
-                    <TableCell>
+                    <TableCell className="hidden sm:table-cell">{assignment.dueDate}</TableCell>
+                    <TableCell className="hidden lg:table-cell">
                       <Badge variant={getStatusBadgeVariant(assignment.status)}>{assignment.status}</Badge>
                     </TableCell>
-                    <TableCell>{assignment.grade}</TableCell>
+                    <TableCell className="hidden xl:table-cell">{assignment.grade}</TableCell>
                     <TableCell>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>

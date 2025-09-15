@@ -4,6 +4,7 @@ import './globals.css';
 import { Inter, Source_Code_Pro } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
+import { CommandPalette } from '@/components/command-palette';
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
           themes={['light', 'dark', 'ocean', 'sunset']}
         >
           {children}
+          <CommandPalette />
           <Toaster />
         </ThemeProvider>
       </body>
